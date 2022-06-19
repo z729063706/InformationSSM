@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.mappers.UserMapper">
+	<sql id="cols">
+    user_id, user_name, user_pass, user_nickname, user_email, user_url, user_avatar, 
+ 	  user_last_login_ip, user_register_time, user_last_login_time, user_status,user_photo
+ 	</sql>
+
+	  <!-- 添加用户,含有照片 -->
+    <insert id="addUser" parameterType="User" >
+        insert into   user
+        (user_id, user_name, user_pass,
+        user_nickname, user_email, user_url,
+        user_avatar, user_last_login_ip, user_register_time,
+        user_last_login_time, user_status,user_photo)
+        values (#{userId}, #{userName}, #{userPass},
+        #{userNickname}, #{userEmail}, #{userUrl},
+        #{userAvatar}, #{userLastLoginIp}, #{userRegisterTime},
+        #{userLastLoginTime}, #{userStatus},#{userPhoto})
+    </insert>
+</mapper>
