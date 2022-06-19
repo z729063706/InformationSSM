@@ -5,10 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Component;
 
-import com.beans.Article;
 import com.beans.Comment;
 @Component
 public interface CommentMapper {

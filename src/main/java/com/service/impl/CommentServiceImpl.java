@@ -1,6 +1,5 @@
 package com.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -8,7 +7,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.beans.Article;
-import com.beans.Category;
 import com.beans.Comment;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

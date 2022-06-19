@@ -1,7 +1,5 @@
 package com.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,18 +8,12 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.util.HtmlUtils;
-
 import com.beans.Article;
 import com.beans.Category;
 import com.beans.Tag;
@@ -31,10 +23,7 @@ import com.service.ArticleService;
 import com.service.CategoryService;
 import com.service.TagService;
 
-import cn.hutool.core.lang.UUID;
 import cn.hutool.http.HtmlUtil;
-import cn.hutool.json.JSONObject;
-
 @Controller 
 @RequestMapping("/Article")
 public class ArticleController {
@@ -189,27 +178,27 @@ public class ArticleController {
 	}
 	
 	
-	@ResponseBody @RequestMapping("/uploadImg")
-	public String uploadArticleImg(MultipartHttpServletRequest request) throws IllegalStateException, IOException {
-		//得到客户端传过来的图片 , imgFile 是一个固定名称
-		MultipartFile file= request.getFile("imgFile");
+	// @ResponseBody @RequestMapping("/uploadImg")
+	// public String uploadArticleImg(MultipartHttpServletRequest request) throws IllegalStateException, IOException {
+	// 	//得到客户端传过来的图片 , imgFile 是一个固定名称
+	// 	MultipartFile file= request.getFile("imgFile");
 		
-		//随机生成一个文件名
-		String fileName=UUID.randomUUID().toString()+".jpg";
+	// 	//随机生成一个文件名
+	// 	String fileName=UUID.randomUUID().toString()+".jpg";
 		
-		//定义一个存放文件的目标
-		File destFile=new File("D:/spring_imgupload/"+fileName);
+	// 	//定义一个存放文件的目标
+	// 	File destFile=new File("D:/spring_imgupload/"+fileName);
 		
-		//把文件存到某个目录下
-		file.transferTo(destFile);
+	// 	//把文件存到某个目录下
+	// 	file.transferTo(destFile);
 
-		String path="http://localhost:8080/upload/"+fileName;
+	// 	String path="http://localhost:8080/upload/"+fileName;
 		
-		//注意,这个 JSONObject 是来源于 hutool 工具包
-		JSONObject obj = new JSONObject();
-		obj.put("error", 0);
-		obj.put("url", path);
+	// 	//注意,这个 JSONObject 是来源于 hutool 工具包
+	// 	JSONObject obj = new JSONObject();
+	// 	obj.put("error", 0);
+	// 	obj.put("url", path);
 
-		return  obj.toString();
-	}
+	// 	return  obj.toString();
+	// }
 }

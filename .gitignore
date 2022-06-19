@@ -1,6 +1,7 @@
 *.class
 .DS_Store
 application.pid
+**/.vscode/*
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -16,7 +17,7 @@ hs_err_pid*
 # Eclipse
 .classpath
 .project
-target/*
+**/target/*
 .settings
 
 # Idea
